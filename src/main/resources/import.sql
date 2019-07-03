@@ -103,7 +103,7 @@
  INSERT INTO cidade (id, nome, estado_id) VALUES (70, 'Serra', 8);
  INSERT INTO cidade (id, nome, estado_id) VALUES (71, 'Sooretama', 8);
  INSERT INTO cidade (id, nome, estado_id) VALUES (72, 'Vargem Alta', 8);
- INSERT INTO cidade (id, nome, estado_id) VALUES (73, 'Venda Nova do Imigrante', 8);
+ INSERT INTO cidade (id, nome, estado_id) VALUES (73, 'CompraVenda Nova do Imigrante', 8);
  INSERT INTO cidade (id, nome, estado_id) VALUES (74, 'Viana', 8);
  INSERT INTO cidade (id, nome, estado_id) VALUES (75, 'Vila Pavão', 8);
  INSERT INTO cidade (id, nome, estado_id) VALUES (76, 'Vila Valério', 8);
