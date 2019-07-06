@@ -1,5 +1,6 @@
 package br.edu.utfpr.pb.ProjetoFinal.model;
 
+import br.edu.utfpr.pb.ProjetoFinal.util.BooleanConverter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -30,7 +31,7 @@ public class CompraVenda implements Serializable {
     private LocalDate data;
 
     @Column
-    private Integer Parcelas;
+    private Integer parcelas;
 
     @ManyToOne()
     @JoinColumn(name = "pessoa_id", referencedColumnName = "id")
@@ -43,6 +44,11 @@ public class CompraVenda implements Serializable {
 
     @Transient
     private Double valorTotal;
+
+    @Convert(converter = BooleanConverter.class)
+    @Column(columnDefinition = "char(1) default 'F'")
+    private Boolean isVenda;
+
 
 
     public Double getValorTotal() {

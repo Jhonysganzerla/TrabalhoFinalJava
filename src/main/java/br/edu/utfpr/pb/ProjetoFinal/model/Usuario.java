@@ -18,6 +18,9 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "usuario")
 public class Usuario implements AbstractModel{
+    public static final String FIND_ALL = "Usuario.findAll";
+    public static final String FIND_BY_EMAIL_AND_SENHA=
+            "Usuario.findByEmailAndSenha";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
