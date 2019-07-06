@@ -62,6 +62,7 @@ public class MainSplash extends Application {
                 updateMessage("Conectando ao banco de dados . . .");
                 UsuarioDao usuarioDao = new UsuarioDao();
                 updateMessage("Iniciando o sistema.");
+                showMainStage();
                 return null;
             }
         };
