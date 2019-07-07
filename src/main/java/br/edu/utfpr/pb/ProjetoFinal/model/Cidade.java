@@ -8,7 +8,17 @@ import javax.validation.constraints.NotNull;
 @Entity
 @EqualsAndHashCode(of = "id")
 @Table(name = "cidade")
+@NamedQueries({
+        @NamedQuery(name = "Cidade.find_cidade_by_estado",
+                query = "from Cidade c "
+                        + " where c.estado=:estado"),
+        @NamedQuery(name = "Cidade.findAll",
+                query = "Select c from Cidade c")
+})
 public class Cidade implements AbstractModel {
+    public static final String FIND_ALL = "Cidade.findAll";
+    public static final String FIND_CIDADE_BY_ESTADO=
+            "Cidade.find_cidade_by_estado";
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -37,5 +47,10 @@ public class Cidade implements AbstractModel {
 
     public Estado getEstado() {
         return estado;
+    }
+
+    @Override
+    public String toString() {
+        return nome;
     }
 }

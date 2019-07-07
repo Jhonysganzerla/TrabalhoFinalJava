@@ -45,4 +45,9 @@ public class Estado implements AbstractModel {
     public Pais getPais() {
         return pais;
     }
+
+    @Override
+    public String toString() {
+        return nome;
+    }
 }

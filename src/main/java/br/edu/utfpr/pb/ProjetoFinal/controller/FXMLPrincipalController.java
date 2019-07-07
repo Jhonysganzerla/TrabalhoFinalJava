@@ -1,11 +1,7 @@
 package br.edu.utfpr.pb.ProjetoFinal.controller;
 
-import java.awt.Image;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 import br.edu.utfpr.pb.ProjetoFinal.model.Usuario;
@@ -15,11 +11,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
-import javax.swing.ImageIcon;
-import net.sf.jasperreports.view.JasperViewer;
 
 public class FXMLPrincipalController implements Initializable {
 
@@ -80,6 +73,14 @@ public class FXMLPrincipalController implements Initializable {
             throws IOException {
         setDataPane(openVBox(
                 "/fxml/FXMLUsuarioLista.fxml"
+        ));
+    }
+    
+      @FXML
+    public void loadPessoa(ActionEvent event)
+            throws IOException {
+        setDataPane(openVBox(
+                "/fxml/FXMLPessoaLista.fxml"
         ));
     }
 /*

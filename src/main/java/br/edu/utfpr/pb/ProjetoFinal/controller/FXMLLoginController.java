@@ -53,7 +53,7 @@ public class FXMLLoginController implements Initializable {
                             .getResource("/fxml/FXMLPrincipal.fxml"));
                 VBox root = (VBox) loader.load();
                 Scene scene = new Scene(root);
-                scene.getStylesheets().add("/styles/temaDark.css");
+               // scene.getStylesheets().add("/styles/temaDark.css");
                 
                 Stage stage = new Stage();
                 stage.setTitle("Projeto Final - 0024S");
@@ -71,6 +71,14 @@ public class FXMLLoginController implements Initializable {
                 stageLogin.close();
                         
             }
+            if(usuario != null && usuario.getIsAdmin()){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Bem vindo");
+                alert.setHeaderText("Usuario logado como administrador");
+                alert.setContentText("Use suas permissões com sabedoria");
+                alert.showAndWait();
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);

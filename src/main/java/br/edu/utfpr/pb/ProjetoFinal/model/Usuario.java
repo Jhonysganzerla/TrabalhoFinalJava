@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Data
@@ -17,7 +18,15 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Entity
 @Table(name = "usuario")
-public class Usuario implements AbstractModel{
+@NamedQueries({
+        @NamedQuery(name = "Usuario.findByEmailAndSenha",
+                query = "from Usuario u "
+                        + " where u.email=:email AND u.senha=:senha"),
+        @NamedQuery(name = "Usuario.findAll",
+                query = "Select u from Usuario u")
+})
+public class Usuario implements AbstractModel, Serializable {
+    private static final long serialVersionUID = 1L;
     public static final String FIND_ALL = "Usuario.findAll";
     public static final String FIND_BY_EMAIL_AND_SENHA=
             "Usuario.findByEmailAndSenha";
@@ -40,13 +49,15 @@ public class Usuario implements AbstractModel{
     @Convert(converter = BooleanConverter.class)
     @Column(columnDefinition = "char(1) default 'T'")
     private Boolean ativo;
-    @NotNull(message = "O campo "
-            + "'Data de Nascimento' é "
-            + "obrigatório!")
-    @Column(nullable = false)
+
+    @Column(nullable = true)
     private LocalDate dataNascimento;
     @Lob
     @Column()
     private byte[] foto;
+
+    @Convert(converter = BooleanConverter.class)
+    @Column(columnDefinition = "char(1) default 'F'",nullable = false)
+    private Boolean isAdmin;
 
 }

@@ -7,13 +7,13 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
 @EqualsAndHashCode(of = "id")
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @MappedSuperclass
 public class ContaPagarReceber {
 
@@ -32,5 +32,8 @@ public class ContaPagarReceber {
 
     @Column(nullable = false)
     private Integer parcelas;
+
+    @Column(nullable = false)
+    private BigDecimal valor;
 
 }

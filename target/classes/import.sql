@@ -1,3 +1,6 @@
+ --Usuario
+ INSERT INTO usuario(id,nome,cpf,email,senha,ativo,isAdmin) values (1,'jhonyadm',12345678909,'admin@admin.com','1','T','T');
+INSERT INTO usuario(id,nome,cpf,email,senha,ativo,isAdmin) values(2,'jhony',12345678909,'jhony@jhony.com','1','T','F');
   -- PAIS
  INSERT INTO pais (id, nome, sigla) VALUES (1, 'Brasil', 'BR');
 
