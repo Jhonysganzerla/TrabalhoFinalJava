@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="473fb2b0-0755-4bb4-831c-7fdc0b71dee5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/br/edu/utfpr/pb/ProjetoFinal/model/Usuario.class" afterPath="$PROJECT_DIR$/target/classes/br/edu/utfpr/pb/ProjetoFinal/model/Usuario.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/br/edu/utfpr/pb/ProjetoFinal/dao/CidadeDao.class" afterPath="$PROJECT_DIR$/target/classes/br/edu/utfpr/pb/ProjetoFinal/dao/CidadeDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/br/edu/utfpr/pb/ProjetoFinal/model/Cidade.class" afterPath="$PROJECT_DIR$/target/classes/br/edu/utfpr/pb/ProjetoFinal/model/Cidade.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/br/edu/utfpr/pb/ProjetoFinal/model/Estado.class" afterPath="$PROJECT_DIR$/target/classes/br/edu/utfpr/pb/ProjetoFinal/model/Estado.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/MainSplash.java" afterPath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/MainSplash.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/controller/FXMLLoginController.java" afterPath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/controller/FXMLLoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/controller/FXMLPrincipalController.java" afterPath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/controller/FXMLPrincipalController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/dao/CidadeDao.java" afterPath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/dao/CidadeDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/model/Cidade.java" afterPath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/model/Cidade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/model/ContaPagarReceber.java" afterPath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/model/ContaPagarReceber.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/model/Estado.java" afterPath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/model/Estado.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/model/Usuario.java" afterPath="$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/model/Usuario.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/import.sql" afterPath="$PROJECT_DIR$/src/main/resources/import.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/import.sql" afterPath="$PROJECT_DIR$/target/classes/import.sql" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -57,8 +46,8 @@
       <file leaf-file-name="Estado.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/model/Estado.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+            <state relative-caret-position="408">
+              <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -577,7 +566,7 @@
       <workItem from="1562445386905" duration="1763000" />
       <workItem from="1562447895613" duration="2809000" />
       <workItem from="1562450932350" duration="3506000" />
-      <workItem from="1562456349967" duration="8827000" />
+      <workItem from="1562456349967" duration="8853000" />
     </task>
     <task id="LOCAL-00001" summary="Melhorias no mapeamento">
       <created>1562197237170</created>
@@ -600,11 +589,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562451435477</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Tela de cadastro de pessoa finalizada">
+      <created>1562471553687</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1562471553687</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25752000" />
+    <option name="totallyTimeSpent" value="25778000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1126,8 +1122,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/edu/utfpr/pb/ProjetoFinal/model/Estado.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+        <state relative-caret-position="408">
+          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
           <folding />
         </state>
       </provider>
