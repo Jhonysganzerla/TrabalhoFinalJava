@@ -5,8 +5,7 @@
  */
 package br.edu.utfpr.pb.ProjetoFinal.controller;
 
-import br.edu.utfpr.pb.ProjetoFinal.dao.CompraDao;
-import br.edu.utfpr.pb.ProjetoFinal.dao.VendaDao;
+import br.edu.utfpr.pb.ProjetoFinal.dao.CompraVendaDao;
 import br.edu.utfpr.pb.ProjetoFinal.model.CompraVenda;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -48,14 +47,14 @@ public class FXMLVendaListaController implements Initializable {
 
     @FXML
     private Button buttonEdit;
-    private VendaDao vendaDao;
+    private CompraVendaDao compravendaDao;
     private ObservableList<CompraVenda> list =
             FXCollections.observableArrayList();
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.vendaDao = new VendaDao();
+        this.compravendaDao = new CompraVendaDao();
         setColumnProperties();
         loadData();
     }
@@ -74,7 +73,7 @@ public class FXMLVendaListaController implements Initializable {
 
     private void loadData() {
         list.clear();
-        list.addAll(vendaDao.listAllVenda());
+        list.addAll(compravendaDao.listAllVenda());
 
         tableData.setItems(list);
     }
@@ -145,7 +144,7 @@ public class FXMLVendaListaController implements Initializable {
             try {
                 CompraVenda venda =  tableData
                         .getSelectionModel().getSelectedItem();
-                vendaDao.delete(venda.getId());
+                compravendaDao.delete(venda.getId());
                 tableData.getItems().remove(
                         tableData.getSelectionModel()
                                 .getSelectedIndex());
