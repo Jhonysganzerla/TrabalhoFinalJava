@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="406.0" prefWidth="728.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.utfpr.pb.ProjetoFinal.controller.FXMLPessoaCadastroController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="406.0" prefWidth="738.0" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@/styles/style.css" />
+         </stylesheets>
+         <children>
+            <Label layoutX="19.0" layoutY="14.0" text="Código" />
+            <Label layoutX="17.0" layoutY="62.0" text="Nome" />
+            <Label layoutX="20.0" layoutY="108.0" text="CPF/CNPJ" />
+            <Label layoutX="291.0" layoutY="157.0" text="Cidade" />
+            <TextField fx:id="textId" disable="true" editable="false" layoutX="20.0" layoutY="31.0" prefHeight="17.0" prefWidth="87.0" />
+            <TextField fx:id="textNome" layoutX="17.0" layoutY="79.0" prefHeight="25.0" prefWidth="430.0" />
+            <TextField fx:id="textCpfCnpj" layoutX="17.0" layoutY="126.0" prefHeight="25.0" prefWidth="238.0" />
+            <ComboBox fx:id="comboCidade" layoutX="288.0" layoutY="174.0" prefHeight="25.0" prefWidth="238.0" />
+            <Button layoutX="630.0" layoutY="367.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="64.0" text="Salvar" />
+            <Button layoutX="556.0" layoutY="367.0" mnemonicParsing="false" onAction="#cancel" text="Cancelar" />
+            <Label layoutX="20.0" layoutY="157.0" text="Estado" />
+            <ComboBox fx:id="comboEstado" layoutX="17.0" layoutY="174.0" prefHeight="25.0" prefWidth="238.0" />
+            <Label layoutX="17.0" layoutY="227.0" text="Rua" />
+            <TextField fx:id="textRua" layoutX="17.0" layoutY="244.0" prefHeight="25.0" prefWidth="238.0" />
+            <Label layoutX="288.0" layoutY="227.0" text="Bairro" />
+            <TextField fx:id="textBairro" layoutX="288.0" layoutY="244.0" prefHeight="25.0" prefWidth="202.0" />
+            <Label layoutX="512.0" layoutY="223.0" text="Numero" />
+            <TextField fx:id="textNumero" layoutX="512.0" layoutY="240.0" prefHeight="25.0" prefWidth="202.0" />
+            <CheckBox fx:id="checkCliente" layoutX="309.0" layoutY="130.0" mnemonicParsing="false" text="Cliente" />
+            <CheckBox fx:id="checkFornecedor" layoutX="411.0" layoutY="130.0" mnemonicParsing="false" text="Fornecedor" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

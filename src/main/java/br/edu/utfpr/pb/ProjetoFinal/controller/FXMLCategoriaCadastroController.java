@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author Vinicius
+ * @author T-Gamer
  */
 public class FXMLCategoriaCadastroController implements Initializable {
 
