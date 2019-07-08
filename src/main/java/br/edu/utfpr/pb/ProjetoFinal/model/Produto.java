@@ -30,7 +30,7 @@ public class Produto implements AbstractModel {
 
     @ManyToOne()
     @JoinColumn(name = "marca_id", referencedColumnName = "id")
-    @NotNull(message = "O campo 'marca' deve ser selecionado.")
+   // @NotNull(message = "O campo 'marca' deve ser selecionado.")
     private Marca marca;
 
     @NotNull(message = "O campo 'categoria' deve ser selecionado.")
@@ -77,14 +77,14 @@ public class Produto implements AbstractModel {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
-
+/*
     public Marca getMarca() {
         return marca;
     }
 
     public void setMarca(Marca marca) {
         this.marca = marca;
-    }
+    }*/
 
     @Override
     public int hashCode() {
@@ -109,5 +109,10 @@ public class Produto implements AbstractModel {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return this.getNome();
     }
 }

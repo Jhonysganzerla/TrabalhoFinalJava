@@ -17,15 +17,19 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "compravenda")
-public class CompraVenda implements Serializable {
+public class CompraVenda implements Serializable, AbstractModel {
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(length = 25, nullable = false)
     private String numeroDocumento;
+
+    @Column(length = 300, nullable = true)
+    private String descricao;
 
     @Column(nullable = false)
     private LocalDate data;
@@ -38,8 +42,8 @@ public class CompraVenda implements Serializable {
     private Pessoa pessoa;
 
     @OneToMany(mappedBy = "compravenda",
-            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
-            fetch = FetchType.LAZY)
+            cascade = {CascadeType.ALL},
+            fetch = FetchType.EAGER)
     private List<CompraVendaProduto> compraVendaProdutos;
 
     @Transient

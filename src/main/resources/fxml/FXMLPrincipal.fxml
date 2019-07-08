@@ -48,8 +48,8 @@
                            <content>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                  <children>
-                                    <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Compra" />
-                                    <Button layoutX="14.0" layoutY="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" text="Venda" />
+                                    <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#loadCompra" prefHeight="25.0" prefWidth="140.0" text="Compra" />
+                                    <Button layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onAction="#loadVenda" prefHeight="25.0" prefWidth="138.0" text="Venda" />
                                  </children>
                               </AnchorPane>
                            </content>

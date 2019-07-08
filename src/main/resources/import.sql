@@ -1,6 +1,6 @@
  --Usuario
  INSERT INTO usuario(id,nome,cpf,email,senha,ativo,isAdmin) values (1,'jhonyadm',12345678909,'admin@admin.com','1','T','T');
-INSERT INTO usuario(id,nome,cpf,email,senha,ativo,isAdmin) values(2,'jhony',12345678909,'jhony@jhony.com','1','T','F');
+INSERT INTO usuario(id,nome,cpf,email,senha,ativo,isAdmin) values(2,'jhony',12345678909,'jhony','1','T','F');
   -- PAIS
  INSERT INTO pais (id, nome, sigla) VALUES (1, 'Brasil', 'BR');
 
@@ -5598,3 +5598,11 @@ INSERT INTO usuario(id,nome,cpf,email,senha,ativo,isAdmin) values(2,'jhony',1234
  INSERT INTO cidade (id, nome, estado_id) VALUES (5562, 'Tupiratins', 27);
  INSERT INTO cidade (id, nome, estado_id) VALUES (5563, 'Wanderlândia', 27);
  INSERT INTO cidade (id, nome, estado_id) VALUES (5564, 'Xambioá', 27);
+
+insert into categoria (descricao) values ('Varejo')
+
+insert into produto (categoria_id, descricao, nome, valor) values (1, '3 da manha', 'Travesseiro', 30.00)
+insert into produto (categoria_id, descricao, nome, valor) values (1, '-1 graus', 'Cama', 400.00)
+insert into produto (categoria_id, descricao, nome, valor) values (1, 'considera por favor', 'Cobertas', 70.00)
+
+insert into pessoa (bairro, cidade_id, cpf, estado_id, isCliente, isFornecedor, nome, numero, rua) values ('Bairro', 1, 12345678909, 1, 'T', 'T', 'Jhony', '17', 'rua')

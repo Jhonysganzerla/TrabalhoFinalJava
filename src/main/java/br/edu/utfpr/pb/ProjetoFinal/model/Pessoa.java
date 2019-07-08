@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import java.util.Objects;
 
 @Data
 @EqualsAndHashCode(of = "id")
@@ -57,4 +56,8 @@ public class Pessoa implements AbstractModel {
     @Column(columnDefinition = "char(1) default 'F'")
     private Boolean isFornecedor;
 
+    @Override
+    public String toString() {
+        return this.getNome();
+    }
 }

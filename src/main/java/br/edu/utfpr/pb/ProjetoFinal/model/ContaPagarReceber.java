@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @EqualsAndHashCode(of = "id")
@@ -21,7 +23,10 @@ public class ContaPagarReceber {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(length=300,nullable = false)
+    private String descricao;
+
+    @Column(length=60,nullable = false)
     private String tipoPagamento;
 
     @Column(nullable = false)
@@ -36,4 +41,12 @@ public class ContaPagarReceber {
     @Column(nullable = false)
     private BigDecimal valor;
 
+
+    public List getTipoPagamento() {
+        ArrayList<String> a = new ArrayList<>();
+        a.add("Boleto");
+        a.add("Dinheiro");
+        a.add("Cheque");
+        return a;
+    }
 }
