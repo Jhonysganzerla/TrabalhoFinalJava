@@ -1,6 +1,9 @@
 package br.edu.utfpr.pb.ProjetoFinal.controller;
 
+import java.math.BigInteger;
 import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ResourceBundle;
 
 import br.edu.utfpr.pb.ProjetoFinal.dao.UsuarioDao;
@@ -39,12 +42,13 @@ public class FXMLLoginController implements Initializable {
         });
         buttonEntrar.setDefaultButton(true);
     }    
-    
+
+
     @FXML
     private void login() {
-        try {
+            try {
             Usuario usuario = this.usuarioDao.findByEmailAndSenhaNamedQuery(
-                    textUsuario.getText(), textSenha.getText());
+                    textUsuario.getText(),this.usuarioDao.getMd5(textSenha.getText()));
             if (usuario != null) {
                 
                 FXMLLoader loader = new FXMLLoader();

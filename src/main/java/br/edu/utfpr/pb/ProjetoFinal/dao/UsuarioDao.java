@@ -3,6 +3,9 @@ package br.edu.utfpr.pb.ProjetoFinal.dao;
 import br.edu.utfpr.pb.ProjetoFinal.model.Usuario;
 
 import javax.persistence.Query;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class UsuarioDao extends GenericDao<Usuario, Long> {
 
@@ -19,4 +22,23 @@ public class UsuarioDao extends GenericDao<Usuario, Long> {
 
         return (Usuario) query.getSingleResult();
     }
+
+    public String getMd5(String input) {
+
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+
+            byte[] messageDigest = md.digest(input.getBytes());
+
+            BigInteger no = new BigInteger(1, messageDigest);
+            String hashtext = no.toString(16);
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

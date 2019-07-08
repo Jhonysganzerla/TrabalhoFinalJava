@@ -1,6 +1,6 @@
- --Usuario
- INSERT INTO usuario(id,nome,cpf,email,senha,ativo,isAdmin) values (1,'jhonyadm',12345678909,'admin@admin.com','1','T','T');
-INSERT INTO usuario(id,nome,cpf,email,senha,ativo,isAdmin) values(2,'jhony',12345678909,'jhony','1','T','F');
+ --Usuario Senhas 1
+ INSERT INTO usuario(id,nome,cpf,email,senha,ativo,isAdmin) values (99,'jhonyadm',12345678909,'admin@admin.com','c4ca4238a0b923820dcc509a6f75849b','T','T');
+INSERT INTO usuario(id,nome,cpf,email,senha,ativo,isAdmin) values(100,'jhony',12345678909,'jhony','c4ca4238a0b923820dcc509a6f75849b','T','F');
   -- PAIS
  INSERT INTO pais (id, nome, sigla) VALUES (1, 'Brasil', 'BR');
 

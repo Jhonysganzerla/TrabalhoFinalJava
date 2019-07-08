@@ -126,6 +126,7 @@ public class FXMLUsuarioCadastroController implements Initializable {
                     dateDataNascimento.getValue());
             usuario.setAtivo(checkAtivo.isSelected());
         if (this.usuarioDao.isValid(usuario)) {
+            this.usuario.setSenha(this.usuarioDao.getMd5(this.usuario.getSenha()));
             this.usuarioDao.save(usuario);
             this.dialogStage.close();
         } else {

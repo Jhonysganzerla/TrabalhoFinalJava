@@ -14,10 +14,7 @@ import java.util.ResourceBundle;
 import br.edu.utfpr.pb.ProjetoFinal.dao.CompraVendaDao;
 import br.edu.utfpr.pb.ProjetoFinal.dao.PessoaDao;
 import br.edu.utfpr.pb.ProjetoFinal.dao.ProdutoDao;
-import br.edu.utfpr.pb.ProjetoFinal.model.CompraVenda;
-import br.edu.utfpr.pb.ProjetoFinal.model.CompraVendaProduto;
-import br.edu.utfpr.pb.ProjetoFinal.model.Pessoa;
-import br.edu.utfpr.pb.ProjetoFinal.model.Produto;
+import br.edu.utfpr.pb.ProjetoFinal.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -185,6 +182,12 @@ public class FXMLCompraVendaCadastroController implements Initializable {
                 tableData.getItems().remove(
                         tableData.getSelectionModel()
                                 .getSelectedIndex());
+
+                if(compravenda.getIsVenda()){
+                    //Aqui eu tenho que chamar a tela de contareceber ora gera finacenrio
+                }else{
+                    //Aqui eu tenho que chamar a tela de contapagar ora gera finacenrio
+                }
 
 
                 Double b = 0.00;

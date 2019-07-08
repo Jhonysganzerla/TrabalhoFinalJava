@@ -17,7 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @MappedSuperclass
-public class ContaPagarReceber {
+public class ContaPagarReceber implements AbstractModel{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
