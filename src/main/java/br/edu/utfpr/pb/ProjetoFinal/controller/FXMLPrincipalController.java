@@ -100,6 +100,24 @@ public class FXMLPrincipalController implements Initializable {
         ));
     }
 
+
+    @FXML
+    public void loadContaPagar(ActionEvent event)
+            throws IOException {
+        setDataPane(openVBox(
+                "/fxml/FXMLContaPagarLista.fxml"
+        ));
+    }
+
+
+    @FXML
+    public void loadContaReceber(ActionEvent event)
+            throws IOException {
+        setDataPane(openVBox(
+                "/fxml/FXMLContaPagarLista.fxml"
+        ));
+    }
+
 /*
     @FXML
     private void showReportProduto(ActionEvent event) {

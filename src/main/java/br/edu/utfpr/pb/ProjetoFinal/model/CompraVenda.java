@@ -34,9 +34,6 @@ public class CompraVenda implements Serializable, AbstractModel {
     @Column(nullable = false)
     private LocalDate data;
 
-    @Column
-    private Integer parcelas;
-
     @ManyToOne()
     @JoinColumn(name = "pessoa_id", referencedColumnName = "id")
     private Pessoa pessoa;

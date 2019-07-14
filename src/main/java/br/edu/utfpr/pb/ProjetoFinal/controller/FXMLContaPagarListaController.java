@@ -24,7 +24,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -42,19 +41,17 @@ public class FXMLContaPagarListaController implements Initializable {
     private TableColumn<ContaPagar, Long> columnId;
     @FXML
     private TableColumn<ContaPagar, String> columnDescricao;
-    @FXML
-    private TableColumn<ContaPagar, BigDecimal> columnValor;
 
     @FXML
     private Button buttonEdit;
-    private ContaPagarDao compraVendaDao;
+    private ContaPagarDao contaPagarDao;
     private ObservableList<ContaPagar> list =
             FXCollections.observableArrayList();
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.compraVendaDao = new ContaPagarDao();
+        this.contaPagarDao = new ContaPagarDao();
         setColumnProperties();
         loadData();
     }
@@ -66,21 +63,18 @@ public class FXMLContaPagarListaController implements Initializable {
         columnDescricao.setCellValueFactory(
                 new PropertyValueFactory<>("descricao")
         );
-        columnValor.setCellValueFactory(
-                new PropertyValueFactory<>("valor")
-        );
     }
 
     private void loadData() {
         list.clear();
-        list.addAll(compraVendaDao.getAll());
+        list.addAll(contaPagarDao.getAll());
 
         tableData.setItems(list);
     }
 
 
     private void openForm(
-            ContaPagar compra,
+            ContaPagar contapagar,
             ActionEvent event) {
         try {
             // Carregar o arquivo fxml e cria um
@@ -93,7 +87,7 @@ public class FXMLContaPagarListaController implements Initializable {
 
             //Criando o stage para o modal
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Cadastro de Compra");
+            dialogStage.setTitle("Cadastro de Conta Pagar");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(
                     ((Node) event.getSource())
@@ -101,10 +95,10 @@ public class FXMLContaPagarListaController implements Initializable {
             Scene scene = new Scene(pane);
             dialogStage.setScene(scene);
 
-           /* ContaPagarCadastroController controller =
+            FXMLContaPagarCadastroController controller =
                     loader.getController();
-            controller.setContaPagar(compra);
-            controller.setDialogStage(dialogStage);*/
+            controller.setContaPagar(contapagar);
+            controller.setDialogStage(dialogStage);
             // Exibe a janela Modal e espera até o usuário
             //fechar
             dialogStage.showAndWait();
@@ -124,16 +118,15 @@ public class FXMLContaPagarListaController implements Initializable {
 
     @FXML
     private void edit(ActionEvent event) {
-        ContaPagar compra =
+        ContaPagar contapagar =
                 tableData.getSelectionModel()
                         .getSelectedItem();
-        this.openForm(compra, event);
+        this.openForm(contapagar, event);
     }
 
     @FXML
     private void newRecord(ActionEvent event) {
-        ContaPagar a = new ContaPagar();/*
-        a.setIsVenda(false);*/
+        ContaPagar a = new ContaPagar();
         this.openForm(a, event);
     }
 
@@ -142,9 +135,9 @@ public class FXMLContaPagarListaController implements Initializable {
         if (tableData.getSelectionModel()
                 .getSelectedIndex() >=0) {
             try {
-                ContaPagar compra =  tableData
+                ContaPagar contapagar =  tableData
                         .getSelectionModel().getSelectedItem();
-                compraVendaDao.delete(compra.getId());
+                contaPagarDao.delete(contapagar.getId());
                 tableData.getItems().remove(
                         tableData.getSelectionModel()
                                 .getSelectedIndex());

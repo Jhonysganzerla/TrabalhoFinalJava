@@ -23,7 +23,7 @@ public class ContaPagarReceber implements AbstractModel{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length=300,nullable = false)
+    @Column(length=300,nullable = true)
     private String descricao;
 
     @Column(length=60,nullable = false)
@@ -39,10 +39,10 @@ public class ContaPagarReceber implements AbstractModel{
     private Integer parcelas;
 
     @Column(nullable = false)
-    private BigDecimal valor;
+    private Double valor;
 
 
-    public List getTipoPagamento() {
+    public List<String> getTiposPagamento() {
         ArrayList<String> a = new ArrayList<>();
         a.add("Boleto");
         a.add("Dinheiro");

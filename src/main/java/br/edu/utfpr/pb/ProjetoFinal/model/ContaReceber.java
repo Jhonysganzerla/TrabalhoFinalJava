@@ -17,6 +17,6 @@ import javax.persistence.*;
 public class ContaReceber extends ContaPagarReceber {
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "compravenda_id", referencedColumnName = "id", nullable = true)
+    @JoinColumn(name = "compravenda_id", referencedColumnName = "id", nullable = false)
     private CompraVenda venda;
 }

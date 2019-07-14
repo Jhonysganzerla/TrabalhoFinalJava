@@ -19,9 +19,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -63,8 +68,6 @@ public class FXMLCompraVendaCadastroController implements Initializable {
 
     private ObservableList<CompraVendaProduto> list =
             FXCollections.observableArrayList();
-
-
 
     private Stage dialogStage;
     private CompraVendaDao compraVendaDao;
@@ -152,7 +155,7 @@ public class FXMLCompraVendaCadastroController implements Initializable {
         }
         CompraVendaProduto a = new CompraVendaProduto();
         a.setValor(Double.parseDouble(this.textUnitario.getText()));
-        a.setProduto((Produto) this.comboProduto.getSelectionModel().getSelectedItem());
+        a.setProduto(this.comboProduto.getSelectionModel().getSelectedItem());
         a.setQuantidade(Integer.parseInt(this.textQuantidade.getText()));
         listaProdutos.add(a);
 
@@ -183,19 +186,7 @@ public class FXMLCompraVendaCadastroController implements Initializable {
                         tableData.getSelectionModel()
                                 .getSelectedIndex());
 
-                if(compravenda.getIsVenda()){
-                    //Aqui eu tenho que chamar a tela de contareceber ora gera finacenrio
-                }else{
-                    //Aqui eu tenho que chamar a tela de contapagar ora gera finacenrio
-                }
-
-
-                Double b = 0.00;
-                for(CompraVendaProduto c : this.list){
-                    b =+  c.getValor()*c.getQuantidade();
-                }
-
-                this.textTotal.setText(b.toString());
+                loadData();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -250,7 +241,40 @@ public class FXMLCompraVendaCadastroController implements Initializable {
 
         if (this.compraVendaDao.isValid(compravenda)) {
             this.compraVendaDao.save(compravenda);
-            this.compraVendaDao.save(compravenda);
+            if(compravenda.getIsVenda()){
+                //Aqui eu tenho que chamar a tela de contareceber ora gera finacenrio
+            }else {
+                ContaPagar contapagar = new ContaPagar();
+
+                contapagar.setCompra(this.compravenda);
+                contapagar.setDataMovimento(this.dateData.getValue());
+                contapagar.setDescricao(this.textDescricao.toString());
+                contapagar.setValor(Double.parseDouble(this.textTotal.getText()));
+
+
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(
+                        this.getClass()
+                                .getResource("/fxml/FXMLContaPagarCadastro.fxml"));
+                AnchorPane pane = (AnchorPane) loader.load();
+
+                //Criando o stage para o modal
+                Stage dialogStage = new Stage();
+                dialogStage.setTitle("Cadastro de Conta Pagar");
+                dialogStage.initModality(Modality.WINDOW_MODAL);
+
+                Scene scene = new Scene(pane);
+                dialogStage.setScene(scene);
+
+                FXMLContaPagarCadastroController controller =
+                        loader.getController();
+                controller.setContaPagar(contapagar);
+                controller.setDialogStage(dialogStage);
+                // Exibe a janela Modal e espera até o usuário
+                //fechar
+                dialogStage.showAndWait();
+            }
+
             this.dialogStage.close();
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -265,7 +289,7 @@ public class FXMLCompraVendaCadastroController implements Initializable {
         }catch (Exception e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erro");
-            alert.setHeaderText("Feche o formulario e abra novamente");
+            alert.setHeaderText("Verifique se todos os campos estão preenchidos corretamente e tente novamente");
             alert.setContentText(
                     this.compraVendaDao.getErrors(compravenda)
             );
